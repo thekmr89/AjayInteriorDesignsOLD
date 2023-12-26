@@ -1,0 +1,169 @@
+.home-banner
+    position: relative
+    margin-top: var(--headerheight)
+    .bg
+        line-height: 0
+        video
+            width: 100%
+            height: calc(100vh - var(--headerheight))
+            object-fit: cover
+    .banner-wrapper
+        position: absolute
+        left: 10%
+        top: 50%
+        translate: 0 -50%
+        .content
+            max-width: 450px
+            h1
+                em
+                    .word-flick
+                        display: inline
+                    span.caret
+                        vertical-align: top
+                        font-family: $Light
+                        animation: blink-blink 1s step-end infinite
+                        @keyframes blink-blink
+                            0%
+                                visibility: visible
+                            50%
+                                visibility: hidden
+                            100%
+                                visibility: visible
+            p
+                margin: 25px 0 45px
+                font-size: 18px
+                line-height: 20px
+                b
+                    color: $primary
+                    font-family: $Bold
+            .btn-col
+                display: flex
+                align-items: center
+                gap: 20px
+                a
+                    display: flex
+                    gap: 6px
+                    align-items: center
+                    background: $primary
+                    color: $white
+                    line-height: 1
+                    padding: 10px 30px
+                    border-radius: 30px
+                    letter-spacing: .4px
+                    transition: .3s ease-out
+                    &:hover
+                        background: #031acf
+                    img
+                        filter: invert(1)
+                    &.wtsp
+                        background: #229f51
+                        &:hover
+                            background: #25D366
+.homeajsecB
+    --flexsize: 50%
+    .flex
+        .colA
+            flex: 0 1 var(--flexsize)
+            max-width: var(--flexsize)
+            width: 100%
+            position: relative
+            overflow: hidden
+            &::before
+                position: absolute
+                content: ""
+                top: 50%
+                translate: 0 -50%
+                right: calc((var(--shadowsize) / 2) * -1)
+                --shadowsize: 150px
+                height: var(--shadowsize)
+                width: var(--shadowsize)
+                border-radius: 50%
+                background: $black
+                z-index: 2
+                filter: blur(50px)
+            .home-service-slider
+                img
+                    height: calc(100vh - var(--headerheight))
+                    object-fit: cover
+            .slideAdots
+                position: absolute
+                top: 50%
+                right: 30px
+                translate: 0 -50%
+                --btnsize: 10px
+                z-index: 2
+                display: flex
+                flex-direction: column
+                gap: 18px 0
+                button.owl-dot
+                    height: calc(var(--btnsize) * .8)
+                    width: calc(var(--btnsize) * .8)
+                    border-radius: 50%
+                    background: $white
+                    opacity: .9
+                    cursor: pointer
+                    transition: .3s ease
+                    &.active
+                        height: var(--btnsize)
+                        width: var(--btnsize)
+                        outline: 2px solid $white
+                        outline-offset: 4px
+                        opacity: 1
+        .colB
+            flex: 0 1 calc(100% - var(--flexsize))
+            max-width: calc(100% - var(--flexsize))
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            background: url(../image/backgrounds/bg3.png) no-repeat,url(../image/backgrounds/bg.png) no-repeat
+            background-position: 8% 0,100% 100%
+            background-size: 15%,60%
+            .card
+                padding: 50px
+                --headingheight: defaultValue
+                max-width: 585px
+                .heading
+                    height: var(--headingheight)
+                    overflow-y: hidden
+                    position: relative
+                    h2
+                        line-height: 1.3
+                        position: absolute
+                        left: 0
+                        top: 100%
+                        font-family: 'Playfair Display', serif
+                        font-weight: 500
+                        &.active
+                            top: 0 
+                            transition: .5s ease
+                .contentwrap
+                    .content
+                        padding: 20px 0 45px
+                        position: relative
+                        p
+                            font-size: 18px
+                            font-family: $Medium
+                        .tabs
+                            position: absolute
+                            top: 0
+                            left: 0
+                            right: 0
+                            bottom: 0
+                            transform: translateX(30px)
+                            opacity: 0
+                            pointer-events: none
+                            user-select: none
+                            &.active
+                                position: static
+                                transform: translateX(0px)
+                                opacity: 1
+                                transition: .5s ease
+                                pointer-events: all
+                                user-select: auto
+                    .get-quote-btn
+                        font-family: $Medium
+                        background: $primary
+                        color: $white
+                        padding: 7px 30px
+                        border-radius: 30px
